@@ -7,6 +7,7 @@ export default {
   sonarqubeChannel: 'my-channel',
   sonarqubeUsername: 'Sonar Scanner',
   sonarqubeIconUrl: 'https://url-custom-icon.png',
+  mattermostWebhook: 'https://mattermost/webhook',
   logger: {
     transport: {
       target: 'pino-pretty',
