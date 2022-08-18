@@ -12,7 +12,6 @@ RUN npm run build
 FROM node:16-alpine AS runner
 WORKDIR /usr/src/app
 COPY --from=builder /usr/src/app/dist ./dist
-COPY --from=builder /usr/src/app/prisma ./prisma
 COPY package.json package-lock.json .env ./
 RUN npm ci
 EXPOSE 8080
