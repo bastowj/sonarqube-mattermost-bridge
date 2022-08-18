@@ -3,7 +3,7 @@ import fastifyWebhook from 'fastify-webhook';
 import fp from 'fastify-plugin';
 import config from '../../core/config';
 import checkSecretKey from '../../core/utils/check-secret-key';
-import { sonarqubeHandler } from '../../core/handlers/webhook-handlers';
+import { sonarqubeHandler } from './webhook-handlers';
 
 const webhookAuto: FastifyPluginAsync<{
   prefix: string;
