@@ -39,7 +39,7 @@ export function sonarqubeHandler(request, reply) {
   const payload = generateMattermostPayload(
     mattermostTxtFormatter(request.body),
   );
-  const { mattermostReply } = got
+  const mattermostReply = got
     .post(config.mattermostWebhook, { json: { payload } })
     .json();
   console.log(JSON.stringify(mattermostReply));
