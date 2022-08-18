@@ -24,8 +24,14 @@ function isMimeTypeJSON(req) {
   return true;
 }
 
-function generateMattermostPayload(txt) {
-
+function generateMattermostPayload() {
+  const payload = {
+    channel: config.sonarqubeChannel,
+    username: config.sonarqubeUsername,
+    icon_url: config.sonarqubeIconUrl,
+    text: 'test',
+  };
+  return payload;
 }
 
 export function sonarqubeHandler(request, reply) {
@@ -36,9 +42,7 @@ export function sonarqubeHandler(request, reply) {
     );
     return;
   }
-  const payload = generateMattermostPayload(
-    mattermostTxtFormatter(request.body),
-  );
+  const payload = generateMattermostPayload();
   const mattermostReply = got
     .post(config.mattermostWebhook, { json: { payload } })
     .json();
